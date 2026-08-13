@@ -1,0 +1,175 @@
+/*
+  Fonts used in the Figma file are "Hitmarker Condensed" (Black) for the
+  logo, and "Neue Montreal" (Regular/Medium/Bold) everywhere else. Both are
+  paid/licensed fonts, not on Google Fonts. If you own the font files, add
+  @font-face rules for them and swap the fallback stacks below. Until then
+  this uses close free fallbacks (Archivo Black + Inter) so the layout still
+  looks right.
+*/
+
+.linktree {
+  --linktree-bg: #613e14;
+  --linktree-yellow: #fae800;
+  --linktree-yellow-soft: #eddd2c;
+  --linktree-tan: #eee8a0;
+  --linktree-amber: #ffbe5d;
+
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 30px 24px 40px;
+  background-color: var(--linktree-bg);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Neue Montreal", "Inter", system-ui, sans-serif;
+}
+
+.linktree__logo {
+  margin: 0 0 32px;
+  font-family: "Hitmarker Condensed", "Archivo Black", sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--linktree-yellow);
+  letter-spacing: 0.5px;
+}
+
+.linktree__nav {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 40px;
+}
+
+.linktree__pill {
+  padding: 10px 16px;
+  border-radius: 99px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.linktree__pill--filled {
+  background-color: var(--linktree-yellow-soft);
+  color: #000;
+  font-weight: 400;
+}
+
+.linktree__pill--outline {
+  background-color: transparent;
+  color: var(--linktree-amber);
+  border: 2px solid var(--linktree-amber);
+  padding: 8px 16px;
+}
+
+.linktree__heading {
+  margin: 0 0 24px;
+  font-family: "Neue Montreal", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.96px;
+  color: var(--linktree-yellow);
+}
+
+.linktree__tm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-left: 4px;
+  border: 1.2px solid var(--linktree-yellow);
+  border-radius: 90px;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: -0.16px;
+  vertical-align: super;
+}
+
+.linktree__subheading {
+  margin: 0 0 40px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.32px;
+  color: var(--linktree-yellow-soft);
+}
+
+.linktree__info {
+  display: flex;
+  gap: 19px;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+
+.linktree__photo {
+  flex-shrink: 0;
+  width: 137px;
+  height: 261px;
+  overflow: hidden;
+}
+
+.linktree__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.linktree__description {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.linktree__bio {
+  margin: 0;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: justify;
+  letter-spacing: -0.28px;
+  color: var(--linktree-yellow-soft);
+  text-indent: 24px;
+}
+
+.linktree__status {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: var(--linktree-tan);
+}
+
+.linktree__cta {
+  width: 100%;
+  max-width: 368px;
+  padding: 12px 10px;
+  border: 2px solid var(--linktree-yellow-soft);
+  border-radius: 99px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--linktree-yellow-soft);
+  box-sizing: border-box;
+}
+
+@media (max-width: 400px) {
+  .linktree__heading {
+    font-size: 36px;
+  }
+}
