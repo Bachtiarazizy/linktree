@@ -8,15 +8,23 @@
 
   Layout is fluid end-to-end: sizes use clamp() so type and spacing scale
   smoothly between a small phone and a desktop window instead of jumping at
-  fixed breakpoints. Two breakpoints handle structural changes only:
-  - <360px: nav pills wrap, photo/bio stack instead of sitting side by side
-  - >700px: the card gets a max width and sits centered with room to breathe
+  fixed breakpoints. The card now always fills the full viewport width and
+  height on every device — no centered/max-width card mode.
+
+  One breakpoint handles a structural change only:
+  - <=480px: photo/bio stack instead of sitting side by side, photo crops 4:3
 */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 .linktree {
@@ -28,7 +36,8 @@
 
   width: 100%;
   min-height: 100vh;
-  margin: 0 auto;
+  min-height: 100dvh; /* accounts for mobile browser chrome so it truly fills the screen */
+  margin: 0;
   padding: clamp(24px, 6vw, 48px) clamp(16px, 5vw, 32px) clamp(32px, 8vw, 56px);
   background-color: var(--linktree-bg);
   display: flex;
@@ -82,11 +91,11 @@
 }
 
 .linktree__heading {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 0 clamp(18px, 4vw, 24px);
   font-family: "Neue Montreal", "Inter", sans-serif;
   font-weight: 700;
-  font-size: clamp(28px, 8vw, 52px);
+  font-size: clamp(28px, 8vw, 64px);
   line-height: 0.9;
   text-align: center;
   text-transform: uppercase;
@@ -128,7 +137,7 @@
   gap: clamp(16px, 4vw, 24px);
   margin-bottom: clamp(36px, 7vw, 48px);
   width: 100%;
-  max-width: 480px;
+  max-width: 700px;
 }
 
 .linktree__photo {
@@ -143,6 +152,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%; /* keep the interesting part of the photo in frame */
   display: block;
 }
 
@@ -176,7 +186,7 @@
 
 .linktree__cta {
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
   padding: 12px 10px;
   border: 2px solid var(--linktree-yellow-soft);
   border-radius: 99px;
@@ -201,8 +211,8 @@
   filter: brightness(1.1);
 }
 
-/* Small phones: stack the photo above the bio instead of side by side */
-@media (max-width: 360px) {
+/* Small/medium phones: stack photo above bio, photo goes wide (4:3) instead of tall */
+@media (max-width: 480px) {
   .linktree__info {
     flex-direction: column;
     align-items: center;
@@ -210,28 +220,12 @@
   }
 
   .linktree__photo {
-    width: 55vw;
-    max-width: 200px;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 4 / 3;
   }
 
   .linktree__bio {
     text-align: left;
-  }
-}
-
-/* Tablets and desktop: cap the card width and let it breathe */
-@media (min-width: 700px) {
-  .linktree {
-    max-width: 640px;
-    border-radius: 24px;
-    margin-top: clamp(24px, 4vh, 48px);
-    margin-bottom: clamp(24px, 4vh, 48px);
-    min-height: auto;
-  }
-}
-
-@media (min-width: 700px) and (min-height: 700px) {
-  body {
-    background-color: #4a3110;
   }
 }
