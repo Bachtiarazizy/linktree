@@ -1,10 +1,5 @@
-// TODO: replace with your real profile photo.
-// Export it from the Figma frame (node 18:41 "Profile Image") and
-// drop it into src/assets/, then swap this import for:
-//   import profileImage from "./assets/profile.jpg";
-const profileImage = "/src/assets/hari-cap.jpg";
+import profileImage from "./assets/hari-cap.jpg";
 
-// Centralize your links here so they're easy to update later.
 const LINKS = {
   portfolio: "#", // e.g. https://byhari.com
   behance: "https://www.behance.net/bachtiarazizy",
