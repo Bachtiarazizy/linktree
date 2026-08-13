@@ -2,7 +2,7 @@
 // Export it from the Figma frame (node 18:41 "Profile Image") and
 // drop it into src/assets/, then swap this import for:
 //   import profileImage from "./assets/profile.jpg";
-const profileImage = "https://www.figma.com/api/mcp/asset/0bd12d38-62b9-4bf7-b2a0-95107b2e40af.png";
+const profileImage = "/src/assets/hari-cap.jpg";
 
 // Centralize your links here so they're easy to update later.
 const LINKS = {
@@ -29,9 +29,11 @@ export default function LinkTree() {
       </nav>
 
       <h1 className="linktree__heading">
-        DESIGN<span className="linktree__tm">TM</span>
+        DESIGN
         <br />
-        THAT WORKS. ENGINEERED TO FEEL RIGHT.
+        THAT WORKS. ENGINEERED
+        <br />
+        TO FEEL RIGHT.
       </h1>
 
       <p className="linktree__subheading">UI/UX Designer &amp; Frontend Developer based in Turkey</p>

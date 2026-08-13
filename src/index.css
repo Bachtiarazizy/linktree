@@ -87,7 +87,7 @@
   font-family: "Neue Montreal", "Inter", sans-serif;
   font-weight: 700;
   font-size: clamp(28px, 8vw, 52px);
-  line-height: 1.05;
+  line-height: 0.9;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: -0.96px;
@@ -110,7 +110,7 @@
 }
 
 .linktree__subheading {
-  max-width: 480px;
+  max-width: 300px;
   margin: 0 0 clamp(32px, 6vw, 48px);
   font-weight: 700;
   font-size: clamp(14px, 3vw, 17px);
