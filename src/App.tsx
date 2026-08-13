@@ -7,8 +7,8 @@ const profileImage = "https://www.figma.com/api/mcp/asset/0bd12d38-62b9-4bf7-b2a
 // Centralize your links here so they're easy to update later.
 const LINKS = {
   portfolio: "#", // e.g. https://byhari.com
-  behance: "https://www.behance.net/your-handle",
-  linkedin: "https://www.linkedin.com/in/your-handle",
+  behance: "https://www.behance.net/bachtiarazizy",
+  linkedin: "https://www.linkedin.com/in/hari-bachtiar-azizy",
 };
 
 export default function LinkTree() {
